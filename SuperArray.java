@@ -30,7 +30,14 @@ public class SuperArray{
     return ans + "]";
   }
   public String toStringDebug(){
-    return "";
+    String ans = "[";
+    for(int i=0;i<data.length;i++){
+      ans += get(i);
+      if(i<data.length-1){
+        ans += ", ";
+      }
+    }
+    return ans += "]";
   }
   public String get(int index){
     if (index < 0 || index >= size()){
