@@ -77,4 +77,19 @@ public class SuperArray{
     }
     return false;
   }
+  public int indexOf(String target){
+    return 0;
+  }
+  public int lastIndexOf(String target){
+    return 0;
+  }
+  public void add(int index, String str){
+
+  }
+  public String remove(int index){
+    return "";
+  }
+  public boolean remove(String target){
+    return false;
+  }
 }
