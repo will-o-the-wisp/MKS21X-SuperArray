@@ -59,4 +59,11 @@ public class SuperArray{
       return old;
     }
   }
+  private void resize(){
+    String[] ans = new String[data.length*2];
+    for(int i=0;i<data.length;i++){
+      ans[i] = data[i];
+    }
+    data = ans;
+  }
 }
