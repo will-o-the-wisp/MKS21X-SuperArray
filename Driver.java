@@ -1,10 +1,10 @@
 public class Driver{
   public static void main(String[] args) {
     SuperArray a = new SuperArray();
-    a.add("hi");
-    a.add("bye");
+    for(int i=0; i<15; i++){
+     a.add("hi");
+    }
     System.out.println(a.toStringDebug());
-    a.resize();
     a.set(1, "hey");
     System.out.println(a.toStringDebug());
   }

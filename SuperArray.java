@@ -69,4 +69,12 @@ public class SuperArray{
     }
     data = ans;
   }
+  public boolean contains(String target){
+    for(int i=0;i<size(),i++){
+      if(get(i).equals(target)){
+        return true;
+      }
+    }
+    return false;
+  }
 }
