@@ -48,4 +48,15 @@ public class SuperArray{
       return data[index];
     }
   }
+  public String set(int index, String s){
+    if (index < 0 || index >= size()){
+      System.out.println("index out of range");
+      return null;
+    }
+    else{
+      old = get(index);
+      data[index] = s;
+      return old;
+    }
+  }
 }
