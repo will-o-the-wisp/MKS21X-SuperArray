@@ -4,7 +4,7 @@ public class Driver{
     a.add("hi");
     a.add("bye");
     System.out.println(a.toStringDebug());
-    System.out.println(a.resize());
+    a.resize();
     a.set(1, "hey");
     System.out.println(a.toStringDebug());
   }
