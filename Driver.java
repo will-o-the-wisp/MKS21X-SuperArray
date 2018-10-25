@@ -5,7 +5,10 @@ public class Driver{
      a.add("hi");
     }
     System.out.println(a.toStringDebug());
+    System.out.println(a.contains("hey"));
+    System.out.println(a.contains("hi"));
     a.set(1, "hey");
     System.out.println(a.toStringDebug());
+    System.out.println(a.contains("hey"));
   }
 }
