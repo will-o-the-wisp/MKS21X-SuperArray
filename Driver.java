@@ -5,5 +5,7 @@ public class Driver{
     a.add("bye");
     System.out.println(a.toStringDebug());
     System.out.println(a.size());
+    a.set(1, "hey");
+    System.out.println(a.toStringDebug());
   }
 }

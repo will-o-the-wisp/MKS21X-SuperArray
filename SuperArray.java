@@ -54,7 +54,7 @@ public class SuperArray{
       return null;
     }
     else{
-      old = get(index);
+      String old = get(index);
       data[index] = s;
       return old;
     }
