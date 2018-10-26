@@ -97,16 +97,19 @@ public class SuperArray{
     if(index < 0 || index >= size()){
       System.out.println("index out of bounds");
     }
-    if(size()+1>data.length){
-      resize();
+    else{
+      if(size()+1>data.length){
+        resize();
+      }
+      size++;
+      for(int i = index;i<size();i++){
+        set(i+1,get(i));
+      }
+      set(index,element);
     }
-    size++;
-    for(int i = index;i<size();i++){
-      set(i+1,get(i));
-    }
-    set(i,element);
   }
   public String remove(int index){
+    String old = get(index);
     if(index < 0 || index >= size()){
       System.out.println("index out of bounds");
       return null;
@@ -115,12 +118,13 @@ public class SuperArray{
       set(i,get(i+1));
     }
     size--;
+    return old;
   }
   public boolean remove(String target){
     int index = indexOf(target);
     if(index != -1){
       remove(index);
-      }
+      return true;
     }
     return false;
   }
