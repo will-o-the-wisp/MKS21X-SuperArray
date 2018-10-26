@@ -78,10 +78,20 @@ public class SuperArray{
     return false;
   }
   public int indexOf(String target){
-    return 0;
+    for(int i=0;i<size();i++){
+      if(get(i).equals(target)){
+        return i;
+      }
+    }
+    return -1;
   }
   public int lastIndexOf(String target){
-    return 0;
+    for(int i=size()-1;i>0;i--){
+      if(get(i).equals(target)){
+        return i;
+      }
+    }
+    return -1;
   }
   public void add(int index, String str){
 
