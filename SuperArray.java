@@ -77,30 +77,44 @@ public class SuperArray{
     }
     return false;
   }
-  public int indexOf(String target){
+  public int indexOf(String element){
     for(int i=0;i<size();i++){
-      if(get(i).equals(target)){
+      if(get(i).equals(element)){
         return i;
       }
     }
     return -1;
   }
-  public int lastIndexOf(String target){
+  public int lastIndexOf(String element){
     for(int i=size()-1;i>0;i--){
-      if(get(i).equals(target)){
+      if(get(i).equals(element)){
         return i;
       }
     }
     return -1;
   }
-  public void add(int index, String str){
-
+  public void add(int index, String element){
+    if(index < 0 || index >= size()){
+      System.out.println("index out of bounds");
+    }
+    if(size()+1>data.length){
+      resize();
+    }
+    size++;
+    for(int i = index;i<size();i++){
+      set(i+1,get(i));
+    }
+    set(i,element);
   }
   public String remove(int index){
+    if(index < 0 || index >= size()){
+      System.out.println("index out of bounds");
+      return null;
+    }
     for(int i = index;i<size();i++){
       set(i,get(i+1));
-      size--;
     }
+    size--;
   }
   public boolean remove(String target){
     int index = indexOf(target);
