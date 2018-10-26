@@ -97,15 +97,15 @@ public class SuperArray{
 
   }
   public String remove(int index){
-    return "";
+    for(int i = index;i<size();i++){
+      set(i,get(i+1));
+      size--;
+    }
   }
   public boolean remove(String target){
     int index = indexOf(target);
     if(index != -1){
-      for(int i = index;i<size();i++){
-      set(i,get(i+1));
-      size--;
-      return true;
+      remove(index);
       }
     }
     return false;
