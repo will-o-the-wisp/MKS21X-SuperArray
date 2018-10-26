@@ -100,6 +100,14 @@ public class SuperArray{
     return "";
   }
   public boolean remove(String target){
+    int index = indexOf(target);
+    if(index != -1){
+      for(int i = index;i<size();i++){
+      set(i,get(i+1));
+      size--;
+      return true;
+      }
+    }
     return false;
   }
 }
