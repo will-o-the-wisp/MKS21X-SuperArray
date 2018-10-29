@@ -5,6 +5,10 @@ public class SuperArray{
     data = new String[10];
     size = 0;
   }
+  public SuperArray(int capacity){
+    data = new String[capacity];
+    size = 0;
+  }
   public void clear(){
     size = 0;
   }
@@ -44,8 +48,7 @@ public class SuperArray{
   }
   public String get(int index){
     if (index < 0 || index >= size()){
-      System.out.println("index out of range");
-      return null;
+      throw new IndexOutOfBoundsException("Index out of range");
     }
     else{
       return data[index];
@@ -53,8 +56,7 @@ public class SuperArray{
   }
   public String set(int index, String s){
     if (index < 0 || index >= size()){
-      System.out.println("index out of range");
-      return null;
+      throw new IndexOutOfBoundsException("Index out of range");
     }
     else{
       String old = get(index);
@@ -63,7 +65,7 @@ public class SuperArray{
     }
   }
   private void resize(){
-    String[] ans = new String[data.length*2];
+    String[] ans = new String[data.length*2+1];
     for(int i=0;i<data.length;i++){
       ans[i] = data[i];
     }
@@ -95,7 +97,7 @@ public class SuperArray{
   }
   public void add(int index, String element){
     if(index < 0 || index >= size()){
-      System.out.println("index out of bounds");
+      throw new IndexOutOfBoundsException("Index out of bounds");
     }
     else{
       if(size()+1>data.length){
@@ -111,8 +113,7 @@ public class SuperArray{
   public String remove(int index){
     String old = get(index);
     if(index < 0 || index >= size()){
-      System.out.println("index out of bounds");
-      return null;
+      throw new IndexOutOfBoundsException("index out of bounds");
     }
     for(int i = index;i<size();i++){
       set(i,get(i+1));
